@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="13" height="40" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="Border" tilewidth="16" tileheight="16">
+  <image source="../tilesets/celiannatilea4.png" width="512" height="480"/>
+ </tileset>
+ <tileset firstgid="961" name="breakout" tilewidth="16" tileheight="16">
+  <image source="breakout_background.png" width="832" height="640"/>
+ </tileset>
+ <layer name="Kachelebene 1" width="13" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC5XW20/WdRzAcdbCAyxLFFBUUBGPZVsXXXTRlpUKqCgqiMfEsjLzoi3LA6CooCDiKdu66KKLNi0PeELwgKJi2dZFF21ZHkADEwND07St9Xr2fP8BLl77/vbe89me7/f32/N7lj8dE/MhKyhkCW/zDkt5l/d4n2V8wJux9IiJmcgkJpNJFtlMYSrTyGGnmVVmVrlezRrWUkQxJaxjPaVsoMnMXva7PsBBDlHDYY5wlGMcp5YnPn+VX7jCr/wW2jWuc4NmWrjJeN+rL8/Qh2d5LrQE+tGfRJJIpjA2egavMYHXeSO0iUxiMplkkc2e2OgZfMxKPuHT0FazhrUUUUwJl9nPXvbxDd+GdoCDHKKGwxzhP5q5yjWucyO0Fm5yi99ppY2XnF0ifUmgH/1DSyKZAQwkhUEsDfe8O8/BF+Ged+c5+DHc8+48B0/1tD9rMy3c5FaPaGuljdv8wR3aednMQBJJIpkBoaUwiMEMIZU0ljGVTLLIZkpo08hhOjPIZSZfsp4iiilhXWilbGAjmyijnJ84Rg2HOcLR0I5TywnqqOckPXrZX+QcaKWN2z2j7Q7t3OVPOujkFTNDGEgKgxgcWippDGUYw0lnBTOYyjRymB5aLjOZxWzyyOcrNrGeUjawMbQyytnMFiqo5GfqOMZxajkRWj0nOcVpztBAXG/7i5wDd2jnbq9o66CTe/xFF/d51cwwhpBKGkNDG046I8hgJKP4iNnMIJeZzAotj3zmUMBc5vE1W9hEGeVsDq2CSrZSxTaqucJp6qjnJKdCO0MDZzlHI+fpE2d/kXOgg07u9Y62Lu7zgL95yCMmmMlgGMNJZ0RoIxnFaMYwlnGspIDZ5JHPnNDmMo/5LGAhi9hHFVuooJKtoW2jmu3sYCe7uMY5TnOGBs6G1sh5LnCRJi6REG9/kXOgi/s8iIu2hzziHx7zhH8j894NY8xlMJJRjI6PtrGM43leYDwv8tjMAmsBc5nH/PhoW8gi3mIxhSyJzPv93WGtYhvVbI+Ptp3sYjefsYfPI/NmLlrP0ch5LsRHWxOX+I7vucwPkXkzi7vxjl8e/hf8DyjtOUIgCAAA
+  </data>
+ </layer>
+</map>
