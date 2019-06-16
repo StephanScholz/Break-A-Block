@@ -13,6 +13,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.math.Matrix4;
 //import sirkarpfen.breakout.entities.BrickStorage;
 
 /**
@@ -112,7 +113,9 @@ public class GameScreen extends ScreenAdapter {
 		 * Draw this last, so we can see the collision boundaries on top of the
 		 * sprites and map.
 		 */
+		spriteBatch.begin();
 		debugRenderer.render(BlockGame.getWorld(), camera.combined);
+		spriteBatch.end();
 	}
 
 	private void drawMenu() {

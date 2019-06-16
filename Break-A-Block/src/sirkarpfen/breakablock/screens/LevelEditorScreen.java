@@ -12,6 +12,12 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.math.Rectangle;
 
+/**
+ * Still a work in progress. Work on the level editor will continue,
+ * once all bugs are fixed in the main game.
+ * @author sirka
+ *
+ */
 public class LevelEditorScreen extends ScreenAdapter {
 
 	private LevelEditor levelEditor;
@@ -29,8 +35,8 @@ public class LevelEditorScreen extends ScreenAdapter {
 	public LevelEditorScreen(BlockGame game) {
 		super(game);
 		textureStorage = TextureStorage.getInstance();
-		background = TextureStorage.getInstance().getTexture("background");
-		toolbar = TextureStorage.getInstance().getTexture("toolbar");
+		background = textureStorage.getTexture("background");
+		toolbar = textureStorage.getTexture("toolbar");
 		shapeRenderer = new ShapeRenderer();
 		drawRect = new Rectangle(0,0,1,1);
 		this.menuWidth = toolbar.getWidth();

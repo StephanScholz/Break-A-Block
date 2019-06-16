@@ -1,5 +1,6 @@
 package sirkarpfen.breakablock.main;
 
+import java.awt.Dimension;
 import java.util.ArrayList;
 
 import sirkarpfen.breakablock.entities.Ball;
@@ -51,11 +52,16 @@ public class BlockGame extends Game {
 	public OrthographicCamera getCamera() {	return camera; }
 	
 	public boolean gameOver;
+	
+	/** Checks wether the demo-game (startmenu background) is running */
 	private boolean isDemoGame = true;
+	
+	/** Is the Demo-Game on the menu-screen running? */
 	public boolean isDemoGame() { return isDemoGame; }
 	
 	private int screenWidth;
 	private int screenHeight;
+	public Dimension getScreenSize() { return new Dimension(screenWidth, screenHeight); }
 	
 	private static int highscore;
 	public static int getHighscore() { return highscore; }
@@ -98,7 +104,7 @@ public class BlockGame extends Game {
 		entityManager = EntityManager.getInstance();
 		
 		// use GL10 without "power of two" enforcement.
-		Texture.setEnforcePotImages(false);
+		//Texture.setEnforcePotImages(false);
 		
 		Gdx.input.setInputProcessor(new KeyInputHandler());
 		
@@ -114,6 +120,9 @@ public class BlockGame extends Game {
 		
 	}
 	
+	/**
+	 * Starts the menu and the demo game in the background.
+	 */
 	public void createDemoGame() {
 		this.isDemoGame = true;
 		this.setScreen(menuScreen);
@@ -194,7 +203,7 @@ public class BlockGame extends Game {
 	private void createWorld() {
 		world = new World(new Vector2(0,0), true);
 		world.setContactListener(new EntityContactEventHandler(this));
-		World.setVelocityThreshold(0);
+		World.setVelocityThreshold(1.0f);
 	}
 	
 	private void createScreens() {
@@ -212,9 +221,9 @@ public class BlockGame extends Game {
 	 * Prepares the OrthographicCamera and sets it on the startPosition.
 	 */
 	private void prepareCamera() {
-		camera = new OrthographicCamera(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-		camera.position.x = Gdx.graphics.getWidth()/2;
-		camera.position.y = Gdx.graphics.getHeight()/2;
+		camera = new OrthographicCamera(screenWidth, screenHeight);
+		camera.position.x = screenWidth/2;
+		camera.position.y = screenWidth/2;
 		camera.update();
 	}
 	

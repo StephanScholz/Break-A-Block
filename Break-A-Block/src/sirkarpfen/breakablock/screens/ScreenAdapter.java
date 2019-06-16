@@ -20,11 +20,11 @@ public class ScreenAdapter implements Screen {
 	protected EntityManager entityManager;
 	protected World world;
 
-	public ScreenAdapter(BlockGame game) {
+	protected ScreenAdapter(BlockGame game) {
 		this.game = game;
 		lastRender = System.nanoTime();
-		this.screenWidth = Gdx.graphics.getWidth();
-		this.screenHeight = Gdx.graphics.getHeight();
+		this.screenWidth = game.getScreenSize().width;
+		this.screenHeight = game.getScreenSize().height;
 		this.spriteBatch = new SpriteBatch();
 		this.debugRenderer = new Box2DDebugRenderer();
 		world = BlockGame.getWorld();
@@ -53,6 +53,7 @@ public class ScreenAdapter implements Screen {
 		Gdx.gl.glClearColor(0.55f, 0.55f, 0.55f, 1f);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 		
+		// Limiting FPS. On test-machine made 50-55 FPS.
 		now = System.nanoTime();
 		if (now - lastRender < 30000000) { // 30 ms, ~33FPS
 			try {
@@ -60,13 +61,14 @@ public class ScreenAdapter implements Screen {
 			} catch (InterruptedException e) {
 			}
 		}
+		
 		lastRender = now;
 	}
 
 	@Override
 	public void resize(int width, int height) {
-		this.screenWidth = width;
-		this.screenHeight = height;
+		//this.screenWidth = width;
+		//this.screenHeight = height;
 	}
 
 	@Override

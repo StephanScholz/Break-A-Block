@@ -11,7 +11,11 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.Rectangle;
-
+/**
+ * Menu screen class.
+ * @author sirka
+ *
+ */
 public class MainMenuScreen extends ScreenAdapter {
 
 	private OrthographicCamera camera;
@@ -40,7 +44,9 @@ public class MainMenuScreen extends ScreenAdapter {
 	public MainMenuScreen(BlockGame game) {
 		super(game);
 		this.camera = game.getCamera();
+		// loads the fog for gradual shading in the background of the menu
 		fog = new Texture(Gdx.files.internal("data/tilesets/fog.png"));
+		// loads the "demo" map for the background
 		background = new Texture(Gdx.files.internal("data/maps/breakout_demo.png"));
 		this.opacity = 0f;
 
@@ -50,6 +56,8 @@ public class MainMenuScreen extends ScreenAdapter {
 		
 	}
 	
+	// This is where the show starts. All variables are reset
+	// and the menu creates all necessary entities for the background action.
 	@Override
 	public void show() {
 		this.opacity = 0;
@@ -59,6 +67,9 @@ public class MainMenuScreen extends ScreenAdapter {
 		entityManager.createEntities();
 	}
 	
+	/**
+	 * Creates all fonts used in the menu entries
+	 */
 	private void createMenuFonts() {
 		this.fontColor = Color.YELLOW;
 		
@@ -75,6 +86,9 @@ public class MainMenuScreen extends ScreenAdapter {
 		quitGameFont.setScale(2);
 	}
 	
+	/**
+	 * Creates the collision rectangles for all menu entries
+	 */
 	private void createCollisionRect() {
 		startGameRect = new Rectangle(screenWidth/2-startGameFont.getBounds("START GAME").width/2,
 				screenHeight/2,

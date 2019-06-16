@@ -12,7 +12,9 @@ public class BlockMain {
 		config.title = "Break-A-Block";
 		config.width = 832;
 		config.height = 640;
-		//config.useGL20 = true; //this is important
+		config.useGL20 = true; //this is important
+		// make the window static
+		config.resizable = false;
 		new LwjglApplication(BlockGame.getInstance(), config);
 	}
 	

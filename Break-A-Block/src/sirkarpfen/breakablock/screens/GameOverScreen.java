@@ -30,6 +30,7 @@ public class GameOverScreen extends ScreenAdapter {
 	
 	public GameOverScreen(BlockGame game) {
 		super(game);
+		// retrieves and prepares the game-over texture.
 		Texture spriteSheet = TextureStorage.getInstance().getTexture("game_over");
 		spriteSheet.setFilter(TextureFilter.Linear, TextureFilter.Linear);
 		TextureRegion[][] temp;
@@ -45,8 +46,9 @@ public class GameOverScreen extends ScreenAdapter {
 		textureRegion[5] = temp[3][0];
 		textureRegion[6] = temp[2][0];
 		textureRegion[7] = temp[1][0];
+		// Initiates the animation (crazy flickering)
 		animation = new Animation(0.08f, textureRegion);
-		
+		// creates the menu
 		retryFont = new BitmapFont();
 		quitFont = new BitmapFont();
 		fontColor = new Color(0.87f,0.95f,0.255f, 1F);
@@ -54,6 +56,7 @@ public class GameOverScreen extends ScreenAdapter {
 		retryFont.setScale(2F);
 		quitFont.setColor(fontColor);
 		quitFont.setScale(2F);
+		// for mouse-over changing the color
 		retryRect = new Rectangle(screenWidth/2-retryFont.getBounds("PLAY AGAIN").width/2,
 				screenHeight/2,
 				retryFont.getBounds("PLAY AGAIN").width,

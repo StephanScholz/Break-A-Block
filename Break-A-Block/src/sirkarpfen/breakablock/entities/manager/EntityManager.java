@@ -20,6 +20,16 @@ import sirkarpfen.breakablock.main.Constants;
 
 import com.badlogic.gdx.Gdx;
 
+/**
+ * This class manages all entities, that are displayed on the current screen.
+ * @author sirka
+ *
+ */
+
+/* 
+ * MAJOR BUGS HERE AND IN ALL CALLED CLASSES. Collision boundaries are not working 
+ * and needs improvement on the ball-physics....
+ */
 public class EntityManager {
 	
 	private static EntityManager instance;
@@ -276,6 +286,10 @@ public class EntityManager {
 		}
 	}
 	
+	/**
+	 * Creates all entities needed for the respective screen that is currently shown.
+	 * Also removes all "old" entities that might linger on the screen, but are not needed anymore.
+	 */
 	public void createEntities() {
 		// nextLevel: 64,32,0,64
 		// newGame: 64,32,0,48

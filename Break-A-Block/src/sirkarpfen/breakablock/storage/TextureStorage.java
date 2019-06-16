@@ -7,6 +7,10 @@ import com.badlogic.gdx.graphics.Texture;
 
 public class TextureStorage {
 	private HashMap<String,Texture> textureMap;
+	/** 
+	 * @param key to be used retrieval
+	 * @return A Texture
+	 */
 	public Texture getTexture(String key) { return textureMap.get(key); }
 
 	private static TextureStorage instance;
@@ -22,6 +26,9 @@ public class TextureStorage {
 		createTextures();
 	}
 
+	/**
+	 * Loads all needed textures for the game and stores them in a HashMap for further use.
+	 */
 	private void createTextures() {
 		textureMap.put("background", new Texture(Gdx.files.internal("data/maps/breakout_background.png")));
 		textureMap.put("demo_background", new Texture(Gdx.files.internal("data/maps/breakout_demo.png")));

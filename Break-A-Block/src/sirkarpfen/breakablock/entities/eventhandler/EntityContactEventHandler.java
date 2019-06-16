@@ -14,6 +14,7 @@ import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Manifold;
 
+/** Responsible for handling all contacts with all game-objects. */
 public class EntityContactEventHandler implements ContactListener {
 	
 	private BlockGame game;

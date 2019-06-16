@@ -61,7 +61,7 @@ public class LevelStorage {
 		if(index+1 > levelList.size()) {
 			return;
 		}
-		currentLevel = this.getLevel(index+1);
+		currentLevel = this.getLevel(index);
 	}
 
 }
